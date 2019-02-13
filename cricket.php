@@ -8,7 +8,7 @@ function getText() {
 	var $a =	document.getElementById('text').value;
 		
 		xhr = new XMLHttpRequest();
-		xhr.open('POST' , 'footballchatdb.php',true);
+		xhr.open('POST' , 'cricketchatdb.php',true);
 		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 		xhr.send('chat='+$a);
 		xhr.onreadystatechange=function(){
