@@ -26,7 +26,7 @@ $password = $_POST['pass1'];
 						}
 						else {
 							echo "failed";
-							header('location: index.php?login_error=<span style="color:red">Username or password is wrong</span>');
+							header('location: index.php');
 						}	
 					
 	

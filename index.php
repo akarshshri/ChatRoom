@@ -1,13 +1,4 @@
-<!DOCTYPE html>
 
-<?php
-	include_once('config.php');
-
-
-	$result = mysqli_query($conn , 'select * from country');
-	if(!$result){
-		echo 'query failed';}
-?>
 
 <html>
 <head>

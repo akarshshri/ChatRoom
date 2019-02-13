@@ -99,7 +99,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 <div id="textbox" style="padding-left:2px;padding-top:2px">
 <form>
 <textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
-<input type="button" value="send"  onclick="getText(); clearText();" />
+<input type="button" value="send"  onclick="getText(); setTimeout(clearText, 2000)" />
 </form>
 </div>
 
