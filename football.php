@@ -55,7 +55,7 @@ setInterval("users()",3000);
 <?php
 
 include_once('config.php');
-			echo '<center><h2>Computer Gaming</h2></center><hr>';
+			echo '<center><h2>Football</h2></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
 			echo	$_SESSION['name'];
