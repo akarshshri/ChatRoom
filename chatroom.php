@@ -35,7 +35,7 @@ function setText(){
 			}
 		
 	}
-	setInterval("setText()",2000);
+	setInterval("setText()",500);
 	
 	
 setInterval("users()",3000);
@@ -155,6 +155,8 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 		}
 
  ?>
- 
+ <script type="text/javascript">
+	$("#chatarea").scrollTop($("#chatarea")[0].scrollHeight);
+</script>>
  </body>
  </html>
