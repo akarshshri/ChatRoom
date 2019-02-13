@@ -55,6 +55,7 @@ setInterval("users()",3000);
 <?php
 
 include_once('config.php');
+			echo '<center><h2>Computer Gaming</h2></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
 			echo	$_SESSION['name'];
@@ -72,53 +73,71 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 	}
 
 ?>
+<html>
+<head><title>Computer Gaming - Chat Room</title></head>
+<body bgcolor="#f1f7fc">
 <form action="">
 <input type="submit" name="logout" value="logout">
 </form>
-<div id="chatbox">
 
-<div id ="chatarea">
+<div id="chatbox" >
+<br>
+<div id ="chatarea" style="padding-left: 5px;padding-top: 2px;">
+<br>
 </div>
-
 <div id="loginperson">
 </div>
 
-<div id="textbox">
+<div id="textbox" style="padding-left:2px;padding-top:2px">
 <form>
-<textarea rows="4" cols="100" id="text"></textarea>
-<input type="button" value="send"  onclick="getText()" />
+<textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
+<input type="button" value="send"  onclick="getText(); clearText();" />
 </form>
-</div></center>
+</div>
 
 </div>
+
 <style>
 #chatbox
 {		
-			border:double;
+			border:single;
 			height:500px;
 			width:1000px;
-			align;
+			align:center;
+			border-radius: 5px;
+			padding-left: 2px;
+			margin: auto;
 			}
 			#chatarea {
-				width:750px;
+				width:747px;
 				height:400px;
 				border:double;
 				float:left;
 				overflow:auto;
+				border-radius: 5px;
+				
 
 				}
 				#loginperson {
 					width:238px;
-					height:497px;
+					height:499px;
 					border:double;
-					float:right;}
+					float:right;
+					border-radius: 5px;
+					margin: auto;
+					}
+					
 					#textbox {
 						width:750px;
-						height:89px;
+						height:92px;
 						border:double;
 						float:left;
+						border-radius: 5px;
+						margin: auto;
 						}
 						#chatting {
+							border-radius: 5px;
+							padding-left: 2px;
 							float:left;}
 </style>
 <?php
