@@ -54,7 +54,7 @@ include_once('config.php');
                 <h2><a href="chatroom.php"><li>Technology</a></h2>
             </div>
             <div class="form-group">
-                <h2><a href="gaming.php"><li>Gaming</a></h2>
+                <h2><a href="gaming.php"><li>Computer Gaming</a></h2>
             </div>
             <div class="form-group">
                 <h2><a href="football.php"><li>Football</a></h2>
