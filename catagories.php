@@ -26,7 +26,7 @@ include_once('config.php');
 
 <body>
 
-    <div class="contact-clean">
+    <div class="contact-clean" >
 	<?php
 
 
@@ -63,13 +63,20 @@ include_once('config.php');
                 <h2><a href="cricket.php"><li>Cricket</a></h2>
             </div>
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
-			<input type="submit" name="logout" value="logout" align ="right"></form>
+            <button onclick="goBack()">Go Back</button>
+
+			<input type="submit" name="logout" value="logout" style="float: right;"></form>
         </form>
 		<br><br><br><br><br><br>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 
 </html>
