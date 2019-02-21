@@ -63,7 +63,7 @@ include_once('config.php');
                 <h2><a href="cricket.php"><li>Cricket</a></h2>
             </div>
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
-            <button onclick="goBack()">Go Back</button>
+            <!-- <button onclick="goBack()">Go Back</button> -->
 
 			<input type="submit" name="logout" value="logout" style="float: right;"></form>
         </form>
