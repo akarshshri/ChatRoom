@@ -35,7 +35,7 @@ function setText(){
 			}
 		
 	}
-	setInterval("setText()",2000);
+	setInterval("setText()",500);
 	
 	
 setInterval("users()",3000);
@@ -106,7 +106,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 </head>
 <body bgcolor="#f1f7fc">
 <form action="">
-<button type="submit" name="logout" class="button1"></button>
+<button type="submit" name="logout" class="button1" style="margin-top: -1%;">Logout</button>
 </form>
 
 <div id="chatbox" >

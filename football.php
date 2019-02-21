@@ -31,7 +31,7 @@ function setText(){
 			}
 		
 	}
-	setInterval("setText()",2000);
+	setInterval("setText()",500);
 	
 	
 setInterval("users()",3000);

@@ -106,7 +106,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 </head>
 <body bgcolor="#f1f7fc">
 <form action="">
-<button type="submit" name="logout" value="logout" class="button1" style="margin-top: -1%;">Logout</button>
+<button type="submit" name="logout" class="button1"  value="logout" style="margin-top: -1%">Logout</button>
 </form>
 
 <div id="chatbox" >
