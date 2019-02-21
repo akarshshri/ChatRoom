@@ -42,9 +42,9 @@
     <div class="register-photo" id="register">
         <div class="form-container">
             <form method="post"  action="insert.php">
-                <h2 class="text-center"><strong>Create</strong> an account.</h2>
-				<div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                <h2 class="text-center"><strong>Create an account</strong></h2>
+				<div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required /></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
                 <div class="form-group">				
 				<tr>
 				<td> Country :   &nbsp </td>
@@ -57,7 +57,7 @@
 				</select></td><td><div id="city_display"></div>
 				</td></tr>
 				</div>
-				<div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password"></div>
+				<div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password" required></div>
                
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div>
 				
