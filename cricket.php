@@ -60,7 +60,7 @@ setInterval("users()",3000);
 
 include_once('config.php');
 
-			echo '<center><h2>Cricket</h2></center><hr>';
+			echo '<center><img src="images/cricket.png" height="50px"></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
 				$name = $_SESSION['name'];
