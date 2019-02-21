@@ -60,7 +60,7 @@ setInterval("users()",3000);
 
 include_once('config.php');
 
-			echo '<center><h2>Technology</h2></center><hr>';
+			echo '<center><img src="images/technology.png" height="50px"></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
 				$name = $_SESSION['name'];
@@ -82,10 +82,31 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 
 ?>
 <html>
-<head><title>Technology - Chat Room</title></head>
+<head>
+	<title>Technology - Chat Room</title>
+	<style>
+		.button1 {
+		  background:#f4476b;
+		  border:none;
+		  border-radius:4px;
+		  padding:11px;
+		  box-shadow:none;
+		  margin-top:26px;
+		  text-shadow:none;
+		  outline:none !important;
+		}
+		.button1:hover, .button1:active {
+		  background:#eb3b60;
+		}
+
+		.button1:active {
+		  transform:translateY(1px);
+		}
+	</style>
+</head>
 <body bgcolor="#f1f7fc">
 <form action="">
-<input type="submit" name="logout" value="logout">
+<button type="submit" name="logout" value="logout" class="button1" style="margin-top: -1%;">Logout</button>
 </form>
 
 <div id="chatbox" >
