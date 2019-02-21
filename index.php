@@ -1,6 +1,15 @@
 
 
 <html>
+<?php
+    include_once('config.php');
+
+
+    $result = mysqli_query($conn , 'select * from country');
+    if(!$result){
+        echo 'query failed';}
+?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +49,7 @@
 				<tr>
 				<td> Country :   &nbsp </td>
 				<td><select name="country">
-				<?php while($row = mysqli_fetch_assoc($result)){?>
+				<?php while($row = mysqli_fetch_assoc($result)){ ?>
 				<option value="<?php echo $row['country_id']; ?>"> <?php echo $row['country_name']; ?>
 				</option>
 
