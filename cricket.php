@@ -82,10 +82,31 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 
 ?>
 <html>
-<head><title>Cricket - Chat Room</title></head>
+<head>
+	<title>Cricket - Chat Room</title>
+	<style>
+		.button1 {
+		  background:#f4476b;
+		  border:none;
+		  border-radius:4px;
+		  padding:11px;
+		  box-shadow:none;
+		  margin-top:26px;
+		  text-shadow:none;
+		  outline:none !important;
+		}
+		.button1:hover, .button1:active {
+		  background:#eb3b60;
+		}
+
+		.button1:active {
+		  transform:translateY(1px);
+		}
+	</style>
+</head>
 <body bgcolor="#f1f7fc">
 <form action="">
-<input type="submit" name="logout" value="logout">
+<button type="submit" name="logout" class="button1"></button>
 </form>
 
 <div id="chatbox" >
