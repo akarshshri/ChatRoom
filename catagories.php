@@ -13,14 +13,16 @@ include_once('config.php');
     <title>Catagories - Chat Room</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-
-
-
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+		.button1 {
+			border-radius: 12px;
+			background-color: #4CAF50;
+		}
+	</style>
 
 </head>
 
@@ -37,7 +39,7 @@ include_once('config.php');
 					
 					
 							
-		if (isset($_GET['logout'])){
+		if (isset($_POST['logout'])){
 			$result = mysqli_query($conn, "UPDATE user SET user_status = '0' WHERE user_email = '$_SESSION[email]';");
 		session_destroy();
 		header('location: index.php?logout_successfully=<span style="color:green">You have successfully Logged Out.</span>');
@@ -65,8 +67,9 @@ include_once('config.php');
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
             <!-- <button onclick="goBack()">Go Back</button> -->
 
-			<input type="submit" name="logout" value="logout" style="float: right;"></form>
-        </form>
+			<button type="submit" name="logout"  style="float: right;" class="button1">Logout</button>
+		</form>
+        
 		<br><br><br><br><br><br>
     </div>
     <script src="assets/js/jquery.min.js"></script>
