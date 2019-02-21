@@ -19,8 +19,21 @@ include_once('config.php');
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
 		.button1 {
-			border-radius: 12px;
-			background-color: #4CAF50;
+		  background:#f4476b;
+		  border:none;
+		  border-radius:4px;
+		  padding:11px;
+		  box-shadow:none;
+		  margin-top:26px;
+		  text-shadow:none;
+		  outline:none !important;
+		}
+		.button1:hover, .button1:active {
+		  background:#eb3b60;
+		}
+
+		.button1:active {
+		  transform:translateY(1px);
 		}
 	</style>
 
@@ -42,8 +55,8 @@ include_once('config.php');
 		if (isset($_POST['logout'])){
 			$result = mysqli_query($conn, "UPDATE user SET user_status = '0' WHERE user_email = '$_SESSION[email]';");
 		session_destroy();
-		header('location: index.php?logout_successfully=<span style="color:green">You have successfully Logged Out.</span>');
-			
+		header('location: index.php');
+		echo "Logged Out!";
 			}
 			//echo '<form action="">';	
 
@@ -67,7 +80,8 @@ include_once('config.php');
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
             <!-- <button onclick="goBack()">Go Back</button> -->
 
-			<button type="submit" name="logout"  style="float: right;" class="button1">Logout</button>
+			<button type="submit" name="logout"  style="float: right; margin-top: -5%;" class="button1">Logout</button>
+			 <br>
 		</form>
         
 		<br><br><br><br><br><br>
