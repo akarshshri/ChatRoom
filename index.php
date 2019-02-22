@@ -1,5 +1,3 @@
-
-
 <html>
 <?php
     include_once('config.php');
@@ -30,8 +28,8 @@
 				<?php } ?>
 				-->
             <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password" required></div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
 			<center><b><a href="#register">Click Here</a> to register</b></center>
         </form>
@@ -60,14 +58,6 @@
 				<div class="form-group"><input class="form-control" type="password" name="pass1" placeholder="Password" required></div>
                
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div>
-				
-				
-				
-
-
-
-
-
             </form>
         </div>
     </div>
