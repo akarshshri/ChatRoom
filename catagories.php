@@ -17,7 +17,11 @@ include_once('config.php');
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+    	span{
+    		color: black;
+    	}
 		.button1 {
 		  background:#f4476b;
 		  border:none;
@@ -35,13 +39,31 @@ include_once('config.php');
 		.button1:active {
 		  transform:translateY(1px);
 		}
+
+		ul{
+			position: relative;
+			width: 450px;
+			height: 100px auto 0;
+			padding: 10px;
+			box-sizing: border-box;
+			
+		}
+		ul li{
+			 display: flex;
+			 background: rgba(253,138,231,0.7);
+			 padding: 10px 20px;
+			 color : #fff;
+			 margin : 5px 0;
+			 transition: .5s;
+		}
+
 	</style>
 
 </head>
 
-<body>
+<body >
 
-    <div class="contact-clean" >
+    <div class="contact-clean" style="background-color:;" >
 	<?php
 
 
@@ -62,25 +84,105 @@ include_once('config.php');
 
 	?>
 
-        <form method="post">
+<!--         <form method="post">
             <h1 class="text-center"><span style="text-decoration: underline;">Catagories</span></h1>
 			<br>
             <div class="form-group">
-                <h2><a href="chatroom.php"><li>Technology</a></h2>
+                <h2>
+                	<a href="chatroom.php">
+                		<li>
+                			Technology
+                		</li>
+                	</a>
+                </h2>
             </div>
             <div class="form-group">
-                <h2><a href="gaming.php"><li>Computer Gaming</a></h2>
+                <h2>
+                	<a href="gaming.php">
+                		<li>
+                			Computer Gaming
+                		</li>
+                	</a>
+            	</h2>
             </div>
             <div class="form-group">
-                <h2><a href="football.php"><li>Football</a></h2>
+                <h2>
+                	<a href="football.php">
+                		<li>
+                			Football
+                		</li>
+                	</a>
+                </h2>
 			</div>
 			<div class="form-group">
-                <h2><a href="cricket.php"><li>Cricket</a></h2>
-            </div>
+                <h2>
+                	<a href="cricket.php">
+                		<li>
+                			Cricket
+                		</li>
+            		</a>
+            	</h2>
+            </div> -->
+
+           
+
+
+<form method="post" >
+
+        
+            <h1 class="text-center"><span style="text-decoration: underline;">CATAGORIES</span></h1>
+			<br>
+            
+                <ul >
+                	<a href="chatroom.php">
+                		<li style="margin-right: 10%;">
+                			<span>
+                				<i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                				Technology
+                			</span>
+                		</li>
+                	</a>
+
+                	<a href="gaming.php">
+                		<li style="background: rgba(253,138,231,.4);margin-right: 10%;">
+                			<span>
+                				<i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                				Computer Gaming
+                			</span>
+                		</li>
+                	</a>
+
+                	<a href="football.php">
+                		<li style="background: rgba(253,138,231,.2);margin-right: 10%;">
+                			<span>
+                				<i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+	                			 Football
+	                		</span>
+                		</li>
+                	</a>
+
+                	<a href="cricket.php">
+                		<li style="background: rgba(253,138,231,.1); margin-right: 10%;">
+                			<span>
+                				<i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                				 Cricket
+                			</span>
+                		</li>
+            		</a>
+        </ul>
+
+
+
+
+
+
+
+
+
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
             <!-- <button onclick="goBack()">Go Back</button> -->
 
-			<button type="submit" name="logout"  style="float: right; margin-top: -5%;" class="button1">Logout</button>
+			<button type="submit" name="logout"  style="float: right; margin-top: -5%; margin-left: -30%;" class="button1">Logout</button>
 			 <br>
 		</form>
         
