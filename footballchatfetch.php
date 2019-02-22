@@ -2,7 +2,7 @@
 include_once('config.php');
 $result= mysqli_query($conn , "SELECT * FROM football");
 while ($row = mysqli_fetch_assoc($result)){
-	echo $row['chat_person_name']." : ";
+	echo '<font size="4.5px"><b>'.$row['chat_person_name']."</b></font> : ";
 	echo $row['chat_value']."<br>";
 	
 	}

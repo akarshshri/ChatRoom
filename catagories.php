@@ -127,15 +127,7 @@ include_once('config.php');
                 			</span>
                 		</li>
             		</a>
-        </ul>
-
-
-
-
-
-
-
-
+        		</ul>
 
 			<br><?php // echo	'Hello, '.$_SESSION['name']; ?>
             <!-- <button onclick="goBack()">Go Back</button> -->
