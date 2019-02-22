@@ -84,48 +84,6 @@ include_once('config.php');
 
 	?>
 
-<!--         <form method="post">
-            <h1 class="text-center"><span style="text-decoration: underline;">Catagories</span></h1>
-			<br>
-            <div class="form-group">
-                <h2>
-                	<a href="chatroom.php">
-                		<li>
-                			Technology
-                		</li>
-                	</a>
-                </h2>
-            </div>
-            <div class="form-group">
-                <h2>
-                	<a href="gaming.php">
-                		<li>
-                			Computer Gaming
-                		</li>
-                	</a>
-            	</h2>
-            </div>
-            <div class="form-group">
-                <h2>
-                	<a href="football.php">
-                		<li>
-                			Football
-                		</li>
-                	</a>
-                </h2>
-			</div>
-			<div class="form-group">
-                <h2>
-                	<a href="cricket.php">
-                		<li>
-                			Cricket
-                		</li>
-            		</a>
-            	</h2>
-            </div> -->
-
-           
-
 
 <form method="post" >
 
