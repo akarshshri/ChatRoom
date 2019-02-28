@@ -4,20 +4,23 @@ session_start();
 <script>
 	
 function getText() {
-		
 	var $a =	document.getElementById('text').value;
+	var a =	document.getElementById('text').value;
+	if(a !== ''){
 		
-		xhr = new XMLHttpRequest();
-		xhr.open('POST' , 'chatdb.php',true);
-		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-		xhr.send('chat='+$a);
-		xhr.onreadystatechange=function(){
-			if (xhr.responseText){
-			//	document.getElementById('chatarea').innerHTML=xhr.responseText;
-									}
-				}
-		
-	}
+			
+			xhr = new XMLHttpRequest();
+			xhr.open('POST' , 'chatdb.php',true);
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			xhr.send('chat='+$a);
+			xhr.onreadystatechange=function(){
+				if (xhr.responseText){
+				//	document.getElementById('chatarea').innerHTML=xhr.responseText;
+										}
+					}
+		}
+			
+}
 		
 function clearText(){
 	document.getElementById("textarea1").value = "";
@@ -121,6 +124,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 <form>
 <textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
 <input type="button" value="send"  onclick="getText(); setTimeout(clearText, 2000)" />
+
 </form>
 </div>
 
