@@ -21,6 +21,25 @@ function getText() {
 		}
 			
 }
+
+function getAnno() {
+	var $a =	document.getElementById('ac').value;
+	var a =	document.getElementById('ac').value;
+	if(a !== ''){
+		
+			
+			xhr = new XMLHttpRequest();
+			xhr.open('POST' , 'anno_tech.php',true);
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			xhr.send('anno='+$a);
+			xhr.onreadystatechange=function(){
+				if (xhr.responseText){
+				//	document.getElementById('chatarea').innerHTML=xhr.responseText;
+										}
+					}
+		}
+			
+}
 		
 function clearText(){
 	document.getElementById("textarea1").value = "";
@@ -39,6 +58,22 @@ function setText(){
 		
 	}
 	setInterval("setText()",500);
+
+
+function setText(){
+	
+	xhr = new XMLHttpRequest();
+	xhr.open('POST' , 'techannoFetch.php' , true);
+	xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+	xhr.send();
+	xhr.onreadystatechange = function(){
+	//	alert(xhr.responseText);
+			document.getElementById('anno').innerHTML = xhr.responseText;
+			}
+		
+	}
+	setInterval("setText()",500);
+
 	
 	
 setInterval("users()",3000);
@@ -114,13 +149,24 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 
 <div id="chatbox" >
 <br>
-<div id ="chatarea" style="padding-left: 5px;padding-top: 2px;">
+<div id ="chatarea" >
 <br>
+</div>
+</div>
+<div id="anno">
+	<div style="position: absolute; margin-top: 450px">
+		
+
+	</div>
+</div>
+<div style="position: relative; margin-left: 82%" >
+		<textarea id="ac"></textarea>
+		<input type="button" value="send"  onclick="getAnno(); setTimeout(clearText, 2000)" />
 </div>
 <div id="loginperson">
 </div>
 
-<div id="textbox" style="padding-left:2px;padding-top:2px">
+<div id="textbox" ">
 <form>
 <textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
 <input type="button" value="send"  onclick="getText(); setTimeout(clearText, 2000)" />
@@ -140,6 +186,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 			border-radius: 5px;
 			padding-left: 2px;
 			margin: auto;
+			margin-left: 10%;
 			}
 			#chatarea {
 				width:747px;
@@ -148,16 +195,19 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 				float:left;
 				overflow:auto;
 				border-radius: 5px;
-				
+				position: relative;
 
 				}
 				#loginperson {
 					width:238px;
-					height:499px;
+					height:500px;
 					border:double;
 					float:right;
 					border-radius: 5px;
 					margin: auto;
+					position: static;
+					margin-top: -35%;
+					margin-right: 340px;
 					}
 					
 					#textbox {
@@ -167,11 +217,25 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 						float:left;
 						border-radius: 5px;
 						margin: auto;
+						margin-left: 10%;
+						margin-top: -4%;
+
 						}
 						#chatting {
 							border-radius: 5px;
 							padding-left: 2px;
-							float:left;}
+							float:left;
+							}
+							#anno {
+								width:238px;
+								height:420px;
+								border:double;
+								float:right;
+								border-radius: 5px;
+								margin: auto;
+								margin-top: -32%;
+								margin-right: 5%;
+								}
 </style>
 <?php
 	if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
@@ -182,6 +246,6 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
  ?>
  <script type="text/javascript">
 	$("#chatarea").scrollTop($("#chatarea")[0].scrollHeight);
-</script>>
+</script>
  </body>
  </html>
