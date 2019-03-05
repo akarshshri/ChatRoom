@@ -94,7 +94,6 @@ setInterval("users()",3000);
 		
 		
 </script>
-
 <?php
 
 include_once('config.php');
@@ -120,18 +119,17 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 	}
 
 ?>
+<html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Technology - Chat Room</title>
 	<style>
 		.button1 {
 		  background:#f4476b;
 		  border:none;
 		  border-radius:4px;
-		  padding:5px;
+		  padding:11px;
 		  box-shadow:none;
-		  margin-top:4px;
+		  margin-top:26px;
 		  text-shadow:none;
 		  outline:none !important;
 		}
@@ -143,128 +141,111 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 		  transform:translateY(1px);
 		}
 	</style>
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-</head>
-<body style="background-image: linear-gradient(to bottom right, lightblue, pink); ">
-	<div class="wrapper">
-		<!-- Future Use -->
-		<div class="col-md-12">
-			<center></center>
-		</div>
-		<!-- Future Use -->
-		<div class="col-md-12">
-			<center></center>
-		</div>
-		<!-- Main Chat Box -->
-		<div class="container-fluid">
-			<div class="row">
-				<!-- Left for better padding-left -->
-				<div class="col-md-1">
-					
-				</div>
-				<!-- contains Chat Messages from users -->
-				<div class="col-md-6" style="margin-right: -1%; margin-left: -1%;">
-					<div class="col-md-12" id="chatarea">
-						
-					</div>
-					<!-- Contains textarea to type -->
-					<div class="col-md-12"  id="textbox">
-						<textarea  id="text" cols="96" onfocus="this.value=''" style="margin-top: 3px;"></textarea>
-						<center><input type="button" value="Send"  onclick="getText(); setTimeout(clearText, 2000)" class="button1"  /></center>
-					</div>
-				</div>
-				<div class="col-md-2" style="margin-right: -1%; margin-left: -1%;">
-					<div class="col-md-12" id="anno">
-						
-					</div>
-					<div class="col-md-12" id="annoTextbox">
-						<textarea  id="ac" cols="24" onfocus="this.value=''" style="margin-top: 1%;"></textarea>
-						<center><input type="button" value="Send"  onclick="getAnno(); setTimeout(clearText, 2000)" class="button1"  /></center>
-					</div>
-				</div>
-				<div class="col-md-2 " id="loginperson">
-					
-				</div>
-				<div class="col-md-1">
-					
-				</div>
-			</div>	
-		</div>
+<body bgcolor="#f1f7fc">
+<form action="">
+<button type="submit" name="logout" class="button1"  value="logout" style="margin-top: -1%">Logout</button>
+</form>
+
+<div id="chatbox" >
+<br>
+<div id ="chatarea" >
+<br>
+</div>
+</div>
+<div id="anno">
+	<div style="position: absolute; margin-top: 450px">
+		
 
 	</div>
+</div>
+<div style="position: relative; margin-left: 82%" >
+		<textarea id="ac"></textarea>
+		<input type="button" value="send"  onclick="getAnno(); setTimeout(clearText, 2000)" />
+</div>
+<div id="loginperson">
+</div>
 
+<div id="textbox" ">
+<form>
+<textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
+<input type="button" value="send"  onclick="getText(); setTimeout(clearText, 2000)" />
 
+</form>
+</div>
 
+</div>
 
+<style>
+#chatbox
+{		
+			border:single;
+			height:500px;
+			width:1000px;
+			align:center;
+			border-radius: 5px;
+			padding-left: 2px;
+			margin: auto;
+			margin-left: 10%;
+			}
+			#chatarea {
+				width:747px;
+				height:400px;
+				border:double;
+				float:left;
+				overflow:auto;
+				border-radius: 5px;
+				position: relative;
 
-	<style>
-#chatbox{		
-	border:single;
-	height:500px;
-	width:100%;
-	align:center;
-	border-radius: 5px;
-	margin: auto;
+				}
+				#loginperson {
+					width:238px;
+					height:500px;
+					border:double;
+					float:right;
+					border-radius: 5px;
+					margin: auto;
+					position: static;
+					margin-top: -35%;
+					margin-right: 340px;
+					}
+					
+					#textbox {
+						width:750px;
+						height:92px;
+						border:double;
+						float:left;
+						border-radius: 5px;
+						margin: auto;
+						margin-left: 10%;
+						margin-top: -4%;
 
-}
-
-#chatarea {
-	width:100%;
-	height:400px;
-	border:double;
-	float:left;
-	overflow:auto;
-	border-radius: 5px;
-
-}
-
-#loginperson {
-	width:50%;
-	height: 400px;
-	border:double;
-	float:left;
-	border-radius: 5px;
-
-}
-	
-#textbox {
-	width:750px;
-	height:100px;
-	border:double;
-	float:left;
-	border-radius: 5px;
-
-}
-
-#chatting {
-	border-radius: 5px;
-	padding-left: 2px;
-	float:left;
-}
-
-#anno {
-	width:100%;
-	height:400px;
-	border:double;
-	float:right;
-	border-radius: 5px;
-
-}
-#annotextbox {
-	width:750px;
-	height:100px;
-	border:double;
-	float:left;
-	border-radius: 5px;
-
-}
+						}
+						#chatting {
+							border-radius: 5px;
+							padding-left: 2px;
+							float:left;
+							}
+							#anno {
+								width:238px;
+								height:420px;
+								border:double;
+								float:right;
+								border-radius: 5px;
+								margin: auto;
+								margin-top: -32%;
+								margin-right: 5%;
+								}
 </style>
+<?php
+	if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
+		//session_destroy();
+		header('location: index.php');
+		}
 
-
-
-</body>
+ ?>
+ <script type="text/javascript">
+	$("#chatarea").scrollTop($("#chatarea")[0].scrollHeight);
+</script>
+ </body>
+ </html>
