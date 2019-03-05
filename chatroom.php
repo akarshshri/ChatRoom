@@ -99,13 +99,13 @@ setInterval("users()",3000);
 
 include_once('config.php');
 
-			echo '<center><img src="images/technology.png" height="50px"></center><hr>';
+			echo '<center><img src="images/technology.png" height="50px" style="margin-top:1%;"></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
 				$name = $_SESSION['name'];
 				$arr = explode(' ',trim($name));
 				
-			echo	'<p styple="padding-left:10px">Hello, '. $arr[0].'</p>'.'';
+			echo	'<p styple="padding-left:10px"><h4 style="margin-left: 10%;">Hello, <b>'. $arr[0].'</b></p>'.'</h4>';
 					
 					
 					
@@ -151,6 +151,9 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 </head>
 </head>
 <body style="background-image: linear-gradient(to bottom right, lightblue, pink); ">
+	<form action="">
+		<button type="submit" name="logout" class="button1" style="margin-top: -1%;float: right; margin-right: 15%; margin-top: -3%">Logout</button>
+	</form><br />
 	<div class="wrapper">
 		<!-- Future Use -->
 		<div class="col-md-12">
@@ -225,7 +228,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 
 #loginperson {
 	width:50%;
-	height: 400px;
+	height: 500px;
 	border:double;
 	float:left;
 	border-radius: 5px;
