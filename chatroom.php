@@ -45,7 +45,7 @@ function clearText(){
 	document.getElementById("textarea1").value = "";
 }
 
-function setText(){
+function setText2(){
 	
 	xhr = new XMLHttpRequest();
 	xhr.open('POST' , 'chatFetch.php' , true);
@@ -57,24 +57,24 @@ function setText(){
 			}
 		
 	}
+	setInterval("setText2()",500);
+
+
+
 	setInterval("setText()",500);
 
-
-function setText(){
+	function setText(){
 	
-	xhr = new XMLHttpRequest();
-	xhr.open('POST' , 'techannoFetch.php' , true);
-	xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-	xhr.send();
-	xhr.onreadystatechange = function(){
+	xhr2 = new XMLHttpRequest();
+	xhr2.open('POST' , 'techannoFetch.php' , true);
+	xhr2.setRequestHeader('content-type','application/x-www-form-urlencoded');
+	xhr2.send();
+	xhr2.onreadystatechange = function(){
 	//	alert(xhr.responseText);
-			document.getElementById('anno').innerHTML = xhr.responseText;
+			document.getElementById('anno').innerHTML = xhr2.responseText;
 			}
 		
 	}
-	setInterval("setText()",500);
-
-	
 	
 setInterval("users()",3000);
 
