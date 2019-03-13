@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2019 at 05:33 AM
+-- Generation Time: Mar 13, 2019 at 06:13 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -25,13 +25,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `anno_cricket`
+--
+
+CREATE TABLE `anno_cricket` (
+  `id` int(3) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `anno` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `anno_cricket`
+--
+
+INSERT INTO `anno_cricket` (`id`, `name`, `anno`) VALUES
+(1, 'Akarsh Shrivastava', 'hello');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anno_football`
+--
+
+CREATE TABLE `anno_football` (
+  `id` int(3) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `anno` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `anno_football`
+--
+
+INSERT INTO `anno_football` (`id`, `name`, `anno`) VALUES
+(1, 'Akarsh Shrivastava', 'gaming\n');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `anno_gaming`
 --
 
 CREATE TABLE `anno_gaming` (
-  `id` int(4) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `anno` varchar(200) NOT NULL
+  `id` int(3) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `anno` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -39,7 +77,8 @@ CREATE TABLE `anno_gaming` (
 --
 
 INSERT INTO `anno_gaming` (`id`, `name`, `anno`) VALUES
-(1, 'Akarsh', 'Testing');
+(1, 'Akarsh Shrivastava', '12'),
+(2, 'Akarsh Shrivastava', 'E gaming');
 
 -- --------------------------------------------------------
 
@@ -64,7 +103,8 @@ INSERT INTO `anno_tech` (`id`, `name`, `anno`) VALUES
 (13, 'Akarsh Shrivastava', 'rere'),
 (14, 'Akarsh Shrivastava', 'asd'),
 (15, 'Akarsh Shrivastava', 'this is a long paragraph to test'),
-(16, 'Akarsh Shrivastava', 'sad');
+(16, 'Akarsh Shrivastava', 'sad'),
+(17, 'Akarsh Shrivastava', 'pp');
 
 -- --------------------------------------------------------
 
@@ -208,6 +248,24 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user
 --
 
 --
+-- Indexes for table `anno_cricket`
+--
+ALTER TABLE `anno_cricket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `anno_football`
+--
+ALTER TABLE `anno_football`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `anno_gaming`
+--
+ALTER TABLE `anno_gaming`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `anno_tech`
 --
 ALTER TABLE `anno_tech`
@@ -255,10 +313,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `anno_cricket`
+--
+ALTER TABLE `anno_cricket`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `anno_football`
+--
+ALTER TABLE `anno_football`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `anno_gaming`
+--
+ALTER TABLE `anno_gaming`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `anno_tech`
 --
 ALTER TABLE `anno_tech`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `chat`
