@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include_once('config.php');
@@ -10,7 +9,7 @@ if(isset($_POST['chat']))
              `chat_value`,
 			 `chat_time`
 			 )
-VALUES (NULL,
+	VALUES (NULL,
         '$_SESSION[name]',
 		'$_POST[chat]',
 		NOW()

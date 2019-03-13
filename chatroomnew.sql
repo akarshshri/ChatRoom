@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2019 at 03:47 AM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Mar 13, 2019 at 05:33 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `chatroomnew`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anno_gaming`
+--
+
+CREATE TABLE `anno_gaming` (
+  `id` int(4) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `anno` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `anno_gaming`
+--
+
+INSERT INTO `anno_gaming` (`id`, `name`, `anno`) VALUES
+(1, 'Akarsh', 'Testing');
 
 -- --------------------------------------------------------
 
@@ -44,7 +63,8 @@ INSERT INTO `anno_tech` (`id`, `name`, `anno`) VALUES
 (12, 'Akarsh Shrivastava', 'testing\n'),
 (13, 'Akarsh Shrivastava', 'rere'),
 (14, 'Akarsh Shrivastava', 'asd'),
-(15, 'Akarsh Shrivastava', 'this is a long paragraph to test');
+(15, 'Akarsh Shrivastava', 'this is a long paragraph to test'),
+(16, 'Akarsh Shrivastava', 'sad');
 
 -- --------------------------------------------------------
 
@@ -153,7 +173,8 @@ INSERT INTO `gaming` (`chat_id`, `chat_person_name`, `chat_value`, `chat_time`) 
 (3, 'Akarsh Shrivastava', 'testing', '10:11:53'),
 (4, 'Parth Jaiswal', 'sample text\n', '10:12:34'),
 (5, 'Akarsh Shrivastava', 'jakhskdh', '10:12:57'),
-(6, 'Parth Jaiswal', 'jhgsgd', '10:13:06');
+(6, 'Parth Jaiswal', 'jhgsgd', '10:13:06'),
+(7, 'Akarsh Shrivastava', 'sfds', '10:03:25');
 
 -- --------------------------------------------------------
 
@@ -176,7 +197,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`, `user_country`, `user_status`) VALUES
 (1, 'Akarsh Shrivastava', 'test@gmail.com', '123', '1', '1'),
-(3, 'Shravan Kumar', 'test2@gmail.com', '123', '1', '1'),
+(3, 'Shravan Kumar', 'test2@gmail.com', '123', '1', '0'),
 (4, 'Parth Jaiswal', 'test3@gmail.com', '123', '1', '0'),
 (5, 'James Mathew', 'test4@gmail.com', '123', '1', '0'),
 (9, 'qwe', 'qwe@asd.com', 'qwew', '1', '0'),
@@ -237,7 +258,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `anno_tech`
 --
 ALTER TABLE `anno_tech`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `chat`
@@ -267,7 +288,7 @@ ALTER TABLE `football`
 -- AUTO_INCREMENT for table `gaming`
 --
 ALTER TABLE `gaming`
-  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`

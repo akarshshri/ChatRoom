@@ -4,7 +4,7 @@ include_once('config.php');
 if(isset($_POST['anno']))
 {
 	
-		$result = mysqli_query($conn , "INSERT INTO `chatroomnew`.`anno_tech`
+		$result = mysqli_query($conn , "INSERT INTO `chatroomnew`.`anno_gaming`
 	            (`id`,
 	             `name`,
 	             `anno`

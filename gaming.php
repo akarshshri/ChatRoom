@@ -4,25 +4,51 @@ session_start();
 <script>
 	
 function getText() {
-		
 	var $a =	document.getElementById('text').value;
-	
-		xhr = new XMLHttpRequest();
-		xhr.open('POST' , 'gamingchatdb.php',true);
-		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-		xhr.send('chat='+$a);
-		xhr.onreadystatechange=function(){
-			if (xhr.responseText){
-			//	document.getElementById('chatarea').innerHTML=xhr.responseText;
-									}
-				}
-					}
+	var a =	document.getElementById('text').value;
+	if(a !== ''){
 		
+			
+			xhr = new XMLHttpRequest();
+			xhr.open('POST' , 'gamingchatdb.php',true);
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			xhr.send('chat='+$a);
+			xhr.onreadystatechange=function(){
+				if (xhr.responseText){
+				//	document.getElementById('chatarea').innerHTML=xhr.responseText;
+										}
+					}
+		}
+			
+}
 
-function setText(){
+function getAnno() {
+	var $a =	document.getElementById('ac').value;
+	var a =	document.getElementById('ac').value;
+	if(a !== ''){
+		
+			
+			xhr = new XMLHttpRequest();
+			xhr.open('POST' , 'anno_gaming.php',true);
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+			xhr.send('anno='+$a);
+			xhr.onreadystatechange=function(){
+				if (xhr.responseText){
+				//	document.getElementById('chatarea').innerHTML=xhr.responseText;
+										}
+					}
+		}
+			
+}
+		
+function clearText(){
+	document.getElementById("textarea1").value = "";
+}
+
+function setText2(){
 	
 	xhr = new XMLHttpRequest();
-	xhr.open('POST' , 'gamingchatfetch.php' , true);
+	xhr.open('POST' , 'gamingchatFetch.php' , true);
 	xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
 	xhr.send();
 	xhr.onreadystatechange = function(){
@@ -31,8 +57,24 @@ function setText(){
 			}
 		
 	}
+	setInterval("setText2()",500);
+
+
+
 	setInterval("setText()",500);
+
+	function setText(){
 	
+	xhr2 = new XMLHttpRequest();
+	xhr2.open('POST' , 'gamingannoFetch.php' , true);
+	xhr2.setRequestHeader('content-type','application/x-www-form-urlencoded');
+	xhr2.send();
+	xhr2.onreadystatechange = function(){
+	//	alert(xhr.responseText);
+			document.getElementById('anno').innerHTML = xhr2.responseText;
+			}
+		
+	}
 	
 setInterval("users()",3000);
 
@@ -52,13 +94,18 @@ setInterval("users()",3000);
 		
 		
 </script>
+
 <?php
 
 include_once('config.php');
-			echo '<center><img src="images/computer_gaming.png" height="50px"></center><hr>';
+
+			echo '<center><img src="images/computer_gaming.png" height="50px" style="margin-top:1%;"></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
-			echo	$_SESSION['name'];
+				$name = $_SESSION['name'];
+				$arr = explode(' ',trim($name));
+				
+			echo	'<p styple="padding-left:10px"><h4 style="margin-left: 10%;">Hello, <b>'. $arr[0].'</b></p>'.'</h4>';
 					
 					
 					
@@ -73,17 +120,18 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 	}
 
 ?>
-<html>
 <head>
-	<title>Computer Gaming - Chat Room</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Gaming - Chat Room</title>
 	<style>
 		.button1 {
 		  background:#f4476b;
 		  border:none;
 		  border-radius:4px;
-		  padding:11px;
+		  padding:5px;
 		  box-shadow:none;
-		  margin-top:26px;
+		  margin-top:4px;
 		  text-shadow:none;
 		  outline:none !important;
 		}
@@ -95,80 +143,131 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 		  transform:translateY(1px);
 		}
 	</style>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body bgcolor="#f1f7fc">
-<form action="">
-<button type="submit" name="logout" class="button1"  value="logout">Logout</button>
-</form>
-
-<div id="chatbox" >
-<br>
-<div id ="chatarea" style="padding-left: 5px;padding-top: 2px;">
-<br>
-</div>
-<div id="loginperson">
-</div>
-
-<div id="textbox" style="padding-left:2px;padding-top:2px">
-<form>
-<textarea rows="4" cols="100" id="text" style="overflow:auto;resize:none;padding-left:5px" id = "textarea1" onfocus="this.value=''"></textarea>
-<input type="button" value="send"  onclick="getText(); clearText();" />
-</form>
-</div>
-
-</div>
-
-<style>
-#chatbox
-{		
-			border:single;
-			height:500px;
-			width:1000px;
-			align:center;
-			border-radius: 5px;
-			padding-left: 2px;
-			margin: auto;
-			}
-			#chatarea {
-				width:747px;
-				height:400px;
-				border:double;
-				float:left;
-				overflow:auto;
-				border-radius: 5px;
-				
-
-				}
-				#loginperson {
-					width:238px;
-					height:499px;
-					border:double;
-					float:right;
-					border-radius: 5px;
-					margin: auto;
-					}
+</head>
+<body style="background-image: linear-gradient(to bottom right, lightblue, pink); ">
+	<form action="">
+		<button type="submit" name="logout" class="button1" style="margin-top: -1%;float: right; margin-right: 15%; margin-top: -3%">Logout</button>
+	</form><br />
+	<div class="wrapper">
+		<!-- Future Use -->
+		<div class="col-md-12">
+			<center></center>
+		</div>
+		<!-- Future Use -->
+		<div class="col-md-12">
+			<center></center>
+		</div>
+		<!-- Main Chat Box -->
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Left for better padding-left -->
+				<div class="col-md-1">
 					
-					#textbox {
-						width:750px;
-						height:92px;
-						border:double;
-						float:left;
-						border-radius: 5px;
-						margin: auto;
-						}
-						#chatting {
-							border-radius: 5px;
-							padding-left: 2px;
-							float:left;}
-</style>
-<?php
-	if(!isset($_SESSION['email']) && !isset($_SESSION['password'])){
-		//session_destroy();
-		header('location: index.php');
-		}
+				</div>
+				<!-- contains Chat Messages from users -->
+				<div class="col-md-6" style="margin-right: -1%; margin-left: -1%;">
+					<div class="col-md-12" id="chatarea">
+						
+					</div>
+					<!-- Contains textarea to type -->
+					<div class="col-md-12"  id="textbox">
+						<textarea  id="text" cols="96" onfocus="this.value=''" style="margin-top: 3px;"></textarea>
+						<center><input type="button" value="Send"  onclick="getText(); setTimeout(clearText, 2000)" class="button1"  /></center>
+					</div>
+				</div>
+				<div class="col-md-2" style="margin-right: -1%; margin-left: -1%;">
+					<div class="col-md-12" id="anno">
+						
+					</div>
+					<div class="col-md-12" id="annoTextbox">
+						<textarea  id="ac" cols="24" onfocus="this.value=''" style="margin-top: 1%;" class="input-group"></textarea>
+						<center><input type="button" value="Send"  onclick="getAnno(); setTimeout(clearText, 2000)" class="button1"  /></center>
+					</div>
+				</div>
+				<div class="col-md-2 " id="loginperson">
+					
+				</div>
+				<div class="col-md-1">
+					
+				</div>
+			</div>	 
+		</div>
 
- ?>
- 
- 
- 
- 
+	</div>
+
+
+
+
+
+	<style>
+#chatbox{		
+	border:single;
+	height:500px;
+	width:100%;
+	align:center;
+	border-radius: 5px;
+	margin: auto;
+
+}
+
+#chatarea {
+	width:100%;
+	height:400px;
+	border:double;
+	float:left;
+	overflow:auto;
+	border-radius: 5px;
+
+}
+
+#loginperson {
+	width:50%;
+	height: 500px;
+	border:double;
+	float:left;
+	border-radius: 5px;
+
+}
+	
+#textbox {
+	width:750px;
+	height:100px;
+	border:double;
+	float:left;
+	border-radius: 5px;
+
+}
+
+#chatting {
+	border-radius: 5px;
+	padding-left: 2px;
+	float:left;
+}
+
+#anno {
+	width:100%;
+	height:400px;
+	border:double;
+	float:right;
+	border-radius: 5px;
+
+}
+#annotextbox {
+	width:750px;
+	height:100px;
+	border:double;
+	float:left;
+	border-radius: 5px;
+
+}
+</style>
+
+
+
+</body>
