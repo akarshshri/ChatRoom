@@ -153,6 +153,7 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 </head>
 <body style="background-image: linear-gradient(to bottom right, lightblue, pink); ">
 	<form action="">
+		<a href="./catagories.php"><input type="button" class="button1" style="margin-top: -1%;float: right; margin-right: 20%; margin-top: -3%" value="Back" ></a>
 		<button type="submit" name="logout" class="button1" style="margin-top: -1%;float: right; margin-right: 15%; margin-top: -3%">Logout</button>
 	</form><br />
 	<div class="wrapper">
