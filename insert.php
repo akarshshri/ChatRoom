@@ -14,13 +14,15 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['country']) &
                  `user_email`,
                  `user_password`,
                  `user_country`,
-                 `user_status`)
+                 `user_status`,
+                 `management`)
     VALUES (NULL,
             '$name',
             '$email',
             '$password',
             '$country',
-            '0');");
+            '0',
+        	'0');");
 }else{
    header('location: index.php?registeration_failed=<span style="color:red">Registration failed, Try again</span>');
 }

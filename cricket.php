@@ -186,8 +186,22 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 						
 					</div>
 					<div class="col-md-12" id="annoTextbox">
-						<textarea  id="ac" cols="24" onfocus="this.value=''" style="margin-top: 1%;" class="input-group"></textarea>
-						<center><input type="button" value="Send"  onclick="getAnno(); setTimeout(clearText, 2000)" class="button1"  /></center>
+						<?php
+						$management = mysqli_query($conn, "select management from user WHERE user_email = '$_SESSION[email]';");
+						while ($row = $management->fetch_assoc()) {
+						    $management_status =  $row['management']."<br>";
+						}			
+						//echo $management_status;
+						if($management_status == 1){
+							echo '<textarea  id="ac" cols="24"  style="margin-top: 1%;" class="input-group"></textarea>
+							<center><input type="button" value="Send"  onclick="getAnno(); setTimeout(clearText, 2000)" class="button1" /></center>';
+							//echo "inside if";
+						}else{
+								echo '<textarea  id="ac" cols="24"  style="margin-top: 1%;" class="input-group" disabled>Only management can Post announcements.</textarea>';
+							//echo "inside else";
+						}
+
+						?>
 					</div>
 				</div>
 				<div class="col-md-2 " id="loginperson">
