@@ -29,9 +29,9 @@ function getAnno() {
 		
 			
 			xhr = new XMLHttpRequest();
-			xhr.open('POST' , 'anno_tech.php',true);
-			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-			xhr.send('anno='+$a);
+			xhr.open('POST' , 'anno_tech.php', true); 
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded'); //sends data as HTML Form
+			xhr.send('anno='+$a); //data you wish to send
 			xhr.onreadystatechange=function(){
 				if (xhr.responseText){
 				//	document.getElementById('chatarea').innerHTML=xhr.responseText;

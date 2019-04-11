@@ -98,7 +98,7 @@ setInterval("users()",3000);
 <?php
 
 include_once('config.php');
-
+			//It is used to display user's name with a Hello.
 			echo '<center><img src="images/cricket.png" height="50px" style="margin-top:1%;"></center><hr>';
 				//	echo		$_SESSION['email'];
 				//	echo	$_SESSION['password'];
@@ -109,7 +109,7 @@ include_once('config.php');
 					
 					
 					
-						
+	//Process of logout					
 if (isset($_GET['logout'])){
 	$result = mysqli_query($conn, "UPDATE user
 SET user_status = '0'
@@ -187,6 +187,12 @@ header('location: index.php?logout_successfully=<span style="color:green">You ha
 						
 					</div>
 					<div class="col-md-12" id="annoTextbox">
+
+
+
+						<!-- Announcement Chat for management -->
+
+						
 						<?php
 						$management = mysqli_query($conn, "select management from user WHERE user_email = '$_SESSION[email]';");
 						while ($row = $management->fetch_assoc()) {
